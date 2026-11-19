@@ -208,10 +208,29 @@ strong{font-weight:700}
 .destaques-aval span{padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:.88rem;color:#ddd5e8}
 .aval-cta{display:flex;justify-content:center;margin-top:40px}
 
+/* ---------- Conheça nossa loja ---------- */
+.nossa-loja{padding:100px 0 30px}
+.nossa-loja .cab-loja{text-align:center;max-width:720px;margin:0 auto}
+.nossa-loja .cab-loja .sub-secao{margin-left:auto;margin-right:auto}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:14px;margin-top:44px}
+.bento figure{position:relative;border-radius:20px;overflow:hidden;cursor:zoom-in;background:var(--bg-2);border:1px solid rgba(255,255,255,.06)}
+.bento img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.bento figure:hover img{transform:scale(1.05)}
+.bento figcaption{position:absolute;left:12px;bottom:12px;background:rgba(7,4,12,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:500}
+.bento .b-a{grid-column:span 2;grid-row:span 2}
+.bento .b-alto{grid-row:span 2}
+.bento .b-largo{grid-column:span 2}
+.loja-cta{display:flex;justify-content:center;margin-top:36px}
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(5,2,10,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox.aberto{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox button{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font-size:1.6rem;cursor:pointer;line-height:1}
+
 /* ---------- Localização ---------- */
 .localizacao{padding:100px 0}
 .localizacao .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
-.pin-fachada{max-width:340px;margin:0 0 24px -10px;filter:drop-shadow(0 20px 40px rgba(74,28,116,.6))}
+.pin-fachada{max-width:238px;margin:0 0 24px -10px;filter:drop-shadow(0 20px 40px rgba(74,28,116,.6))}
 .info-loja{display:grid;gap:18px;margin:26px 0 32px}
 .info-loja > div{display:flex;gap:14px;align-items:flex-start}
 .info-loja svg{width:22px;height:22px;color:var(--ciano);flex-shrink:0;margin-top:2px}
@@ -282,7 +301,7 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
   .grade-aval{grid-template-columns:1fr}
   .cta-final .caixa{grid-template-columns:1fr;padding:44px 26px;text-align:center}
   .cta-final .botoes{align-items:stretch}
-  .pin-fachada{max-width:260px;margin:0 auto 20px}
+  .pin-fachada{max-width:182px;margin:0 auto 20px}
   .localizacao .texto-loc{text-align:left}
   /* títulos e subtítulos centralizados no celular */
   .hero-texto{text-align:center;align-items:center}
@@ -303,6 +322,10 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
   .loc-ctas{justify-content:center}
 }
 @media (max-width:600px){
+  .bento{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px;grid-auto-flow:dense}
+  .bento .b-a,.bento .b-largo{grid-column:span 2}
+  .bento figcaption{font-size:.72rem;padding:5px 10px;left:8px;bottom:8px}
+  .nossa-loja{padding-top:70px}
   .cards-dif{grid-template-columns:1fr}
   /* galeria vira carrossel horizontal no celular */
   .grade-reels{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-left:-22px;margin-right:-22px;padding:0 22px 8px;scrollbar-width:none}
@@ -551,6 +574,28 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
   </div>
 </section>
 
+<!-- ============ CONHEÇA NOSSA LOJA ============ -->
+<section class="nossa-loja" id="nossa-loja">
+  <div class="container">
+    <div class="cab-loja">
+      <span class="eyebrow revela">Loja física no Jardim Carvalho</span>
+      <h2 class="titulo-secao revela">Conheça nossa <em>loja</em></h2>
+      <p class="sub-secao revela">Um espaço confortável, com estacionamento exclusivo para clientes, para você conhecer e testar seu próximo iPhone pessoalmente.</p>
+    </div>
+    <div class="bento">
+      <figure class="b-a revela"><img src="assets/img/loja/loja-interna.webp" alt="Interior da loja National Import com bancadas de atendimento" loading="lazy"><figcaption>Nosso espaço</figcaption></figure>
+      <figure class="b-alto revela"><img src="assets/img/loja/fachada.webp" alt="Fachada da National Import com estacionamento" loading="lazy"><figcaption>Estacionamento</figcaption></figure>
+      <figure class="b-alto revela"><img src="assets/img/loja/espaco-atendimento.webp" alt="Área de espera e atendimento da loja" loading="lazy"><figcaption>Atendimento</figcaption></figure>
+      <figure class="revela"><img src="assets/img/loja/bancada.webp" alt="Bancada de atendimento com plantas e iluminação" loading="lazy"><figcaption>Bancada</figcaption></figure>
+      <figure class="b-largo revela"><img src="assets/img/loja/vitrine-neon.webp" alt="Neon da National Import e vitrine de acessórios" loading="lazy"><figcaption>Acessórios</figcaption></figure>
+      <figure class="revela"><img src="assets/img/loja/logo-ambiente.webp" alt="Logo da National Import iluminado na parede" loading="lazy" style="object-position:center 35%"><figcaption>Ambiente</figcaption></figure>
+    </div>
+    <div class="loja-cta revela">
+      <a class="btn btn-primario js-wpp" data-secao="nossa-loja" data-msg="Olá! Vi as fotos da loja no site e quero agendar uma visita." href="#">Agendar uma visita</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ LOCALIZAÇÃO ============ -->
 <section class="localizacao" id="localizacao">
   <div class="container">
@@ -619,6 +664,8 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Foto ampliada"><button type="button" aria-label="Fechar">×</button><img alt=""></div>
+
 <!-- ============ WHATSAPP FLUTUANTE ============ -->
 <a class="wpp-flutuante js-wpp" data-secao="flutuante" data-msg="Olá! Vim pelo site da National Import e gostaria de atendimento." href="#" aria-label="Falar no WhatsApp">
   <span class="wpp-balao" id="wppBalao">Posso te ajudar? 👋</span>
@@ -682,6 +729,14 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
     var b = document.getElementById('wppBalao'); b.classList.add('mostra');
     setTimeout(function(){ b.classList.remove('mostra'); }, 6000);
   }, 5000);
+
+  // Lightbox das fotos da loja
+  var lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('.bento figure').forEach(function(f){
+    f.addEventListener('click', function(){ var i=f.querySelector('img'); lbImg.src=i.src; lbImg.alt=i.alt; lb.classList.add('aberto'); });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('aberto'); });
+  document.addEventListener('keydown', function(e){ if (e.key==='Escape') lb.classList.remove('aberto'); });
 
   document.getElementById('ano').textContent = new Date().getFullYear();
 })();
