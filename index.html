@@ -471,7 +471,7 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
         <span class="tag"><span class="ponto"></span>Várias cores</span>
       </div>
       <div class="reel revela">
-        <video class="js-video" src="assets/video/diversos-iphones.mp4" data-poster="assets/video/diversos-iphones-b.jpg" data-inicio="12" muted loop playsinline preload="none"></video>
+        <video class="js-video" src="assets/video/diversos-iphones.mp4#t=12" data-poster="assets/video/diversos-iphones-b.jpg" muted loop playsinline preload="none"></video>
         <span class="tag"><span class="ponto"></span>Novos e seminovos</span>
       </div>
       <div class="reel revela">
@@ -720,7 +720,7 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
     var vio = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         var v = e.target;
-        if (e.isIntersecting){ v.preload = 'auto'; if (v.dataset.inicio && !v.dataset.iniciou){ v.dataset.iniciou='1'; v.addEventListener('loadedmetadata', function(){ v.currentTime = parseFloat(v.dataset.inicio); }, { once:true }); if (v.readyState >= 1) v.currentTime = parseFloat(v.dataset.inicio); } var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        if (e.isIntersecting){ v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
         else { v.pause(); }
       });
     }, { threshold: .35 });
