@@ -220,7 +220,10 @@ strong{font-weight:700}
 .bento .b-a{grid-column:span 2;grid-row:span 2}
 .bento .b-alto{grid-row:span 2}
 .bento .b-largo{grid-column:span 2}
-.loja-cta{display:flex;justify-content:center;margin-top:36px}
+.divisor{display:flex;align-items:center;gap:18px;max-width:520px;margin:64px auto 0}
+.divisor span{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(197,140,245,.6))}
+.divisor span:last-child{background:linear-gradient(90deg,rgba(197,140,245,.6),transparent)}
+.divisor img{width:52px;height:52px;opacity:.9;filter:drop-shadow(0 0 10px rgba(162,79,224,.6))}
 /* lightbox */
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(5,2,10,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
 .lightbox.aberto{display:flex}
@@ -324,7 +327,6 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:600px){
   .bento{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px;grid-auto-flow:dense}
   .bento .b-a,.bento .b-largo{grid-column:span 2}
-  .bento figcaption{font-size:.72rem;padding:5px 10px;left:8px;bottom:8px}
   .nossa-loja{padding-top:70px}
   .cards-dif{grid-template-columns:1fr}
   /* galeria vira carrossel horizontal no celular */
@@ -583,16 +585,14 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
       <p class="sub-secao revela">Um espaço confortável, com estacionamento exclusivo para clientes, para você conhecer e testar seu próximo iPhone pessoalmente.</p>
     </div>
     <div class="bento">
-      <figure class="b-a revela"><img src="assets/img/loja/loja-interna.webp" alt="Interior da loja National Import com bancadas de atendimento" loading="lazy"><figcaption>Nosso espaço</figcaption></figure>
-      <figure class="b-alto revela"><img src="assets/img/loja/fachada.webp" alt="Fachada da National Import com estacionamento" loading="lazy"><figcaption>Estacionamento</figcaption></figure>
-      <figure class="b-alto revela"><img src="assets/img/loja/espaco-atendimento.webp" alt="Área de espera e atendimento da loja" loading="lazy"><figcaption>Atendimento</figcaption></figure>
-      <figure class="revela"><img src="assets/img/loja/bancada.webp" alt="Bancada de atendimento com plantas e iluminação" loading="lazy"><figcaption>Bancada</figcaption></figure>
-      <figure class="b-largo revela"><img src="assets/img/loja/vitrine-neon.webp" alt="Neon da National Import e vitrine de acessórios" loading="lazy"><figcaption>Acessórios</figcaption></figure>
-      <figure class="revela"><img src="assets/img/loja/logo-ambiente.webp" alt="Logo da National Import iluminado na parede" loading="lazy" style="object-position:center 35%"><figcaption>Ambiente</figcaption></figure>
+      <figure class="b-a revela"><img src="assets/img/loja/loja-interna.webp" alt="Interior da loja National Import com bancadas de atendimento" loading="lazy"></figure>
+      <figure class="b-alto revela"><img src="assets/img/loja/fachada.webp" alt="Fachada da National Import com estacionamento" loading="lazy"></figure>
+      <figure class="b-alto revela"><img src="assets/img/loja/espaco-atendimento.webp" alt="Área de espera e atendimento da loja" loading="lazy"></figure>
+      <figure class="revela"><img src="assets/img/loja/bancada.webp" alt="Bancada de atendimento com plantas e iluminação" loading="lazy"></figure>
+      <figure class="b-largo revela"><img src="assets/img/loja/vitrine-neon.webp" alt="Neon da National Import e vitrine de acessórios" loading="lazy"></figure>
+      <figure class="revela"><img src="assets/img/loja/logo-ambiente.webp" alt="Logo da National Import iluminado na parede" loading="lazy" style="object-position:center 35%"></figure>
     </div>
-    <div class="loja-cta revela">
-      <a class="btn btn-primario js-wpp" data-secao="nossa-loja" data-msg="Olá! Vi as fotos da loja no site e quero agendar uma visita." href="#">Agendar uma visita</a>
-    </div>
+    <div class="divisor revela" aria-hidden="true"><span></span><img src="assets/img/favicon.png" alt="" width="34" height="34" loading="lazy"><span></span></div>
   </div>
 </section>
 
