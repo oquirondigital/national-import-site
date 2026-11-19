@@ -327,6 +327,11 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
   .hero-texto .logo-hero{margin-left:auto;margin-right:auto}
   .hero p.lead{margin-left:auto;margin-right:auto}
   .hero-ctas,.hero-meta{justify-content:center}
+  .hero-meta{flex-direction:column;align-items:center;gap:6px}
+  .hero-meta > *{padding:8px 4px;flex-wrap:wrap;justify-content:center;text-align:center}
+  /* WhatsApp flutuante só aparece depois do topo (o topo já tem botão) */
+  .wpp-flutuante{opacity:0;transform:scale(.6);pointer-events:none;transition:opacity .3s,transform .3s}
+  .wpp-flutuante.mostrar{opacity:1;transform:none;pointer-events:auto}
   .eyebrow{display:block}
   .eyebrow,.titulo-secao,.sub-secao{text-align:center}
   .sub-secao{margin-left:auto;margin-right:auto}
@@ -391,7 +396,7 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
       <a class="btn btn-contorno" href="#galeria">Ver aparelhos</a>
     </div>
     <div class="hero-meta">
-      <a href="#avaliacoes"><span class="estrelas">★★★★★</span> <strong>4,7</strong> no Google (274 avaliações)</a>
+      <a href="#avaliacoes"><span class="estrelas">★★★★★</span> <span><strong>4,7</strong> no Google · 274 avaliações</span></a>
       <a href="#localizacao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Ponta Grossa, PR</a>
     </div>
   </div>
@@ -622,7 +627,7 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
       <div class="info-loja revela">
         <div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <div><strong>Av. Monteiro Lobato, 695</strong><span>Jardim Carvalho · Ponta Grossa - PR · 84015-480</span><span style="display:block">Estacionamento exclusivo para clientes</span></div>
+          <div><strong>Av. Monteiro Lobato, 695</strong><span>Jardim Carvalho · Ponta Grossa - PR</span><span style="display:block">CEP 84015-480</span><span style="display:block">Estacionamento exclusivo para clientes</span></div>
         </div>
         <div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -709,7 +714,8 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
 
   // Topo muda ao rolar
   var topo = document.getElementById('topo');
-  function onScroll(){ topo.classList.toggle('rolou', window.scrollY > 40); }
+  var wppF = document.querySelector('.wpp-flutuante');
+  function onScroll(){ topo.classList.toggle('rolou', window.scrollY > 40); wppF.classList.toggle('mostrar', window.scrollY > window.innerHeight * .7); }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   // Animação de entrada
