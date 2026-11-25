@@ -13,13 +13,14 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="National Import | iPhone com o melhor preço em Ponta Grossa">
 <meta property="og:description" content="Parcele em até 24x, aparelhos com garantia e troca do seu iPhone usado. Av. Monteiro Lobato, 695 - Jardim Carvalho.">
-<meta property="og:url" content="https://oquirondigital.github.io/national-import-site/">
-<meta property="og:image" content="https://oquirondigital.github.io/national-import-site/assets/img/og-image.jpg?v=3">
+<link rel="canonical" href="https://www.nationalimport.com.br/">
+<meta property="og:url" content="https://www.nationalimport.com.br/">
+<meta property="og:image" content="https://www.nationalimport.com.br/assets/img/og-image.jpg?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="iPhone Pro na mão em frente ao neon da National Import">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://oquirondigital.github.io/national-import-site/assets/img/og-image.jpg?v=3">
+<meta name="twitter:image" content="https://www.nationalimport.com.br/assets/img/og-image.jpg?v=3">
 <meta property="og:locale" content="pt_BR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,11 +57,13 @@
 }
 </script>
 
-<!--
-  RASTREAMENTO: cole aqui o Google Tag (gtag.js / GTM) e o Pixel da Meta.
-  Todo clique em WhatsApp dispara o evento "whatsapp_click" no dataLayer
-  (com a seção de origem em "secao") e "Contact" no Pixel, se estiver instalado.
--->
+<!-- Rastreamento: Google Tag Manager (GTM-PX26GSZH) — carrega GA4 G-2VBSFZF4FX e Google Ads AW-17812754690 -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PX26GSZH');</script>
 
 <style>
 :root{
@@ -363,6 +366,7 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX26GSZH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============ TOPO ============ -->
 <header class="topo" id="topo">
@@ -706,8 +710,12 @@ footer a.oq{color:#fff;text-decoration:underline;text-underline-offset:3px}
     el.addEventListener('click', function(){
       var secao = el.getAttribute('data-secao') || 'desconhecida';
       window.dataLayer = window.dataLayer || [];
+      // Conversão do Google Ads (mesma ação usada no site antigo: clique no WhatsApp)
+      gtag('event', 'conversion', { send_to: 'AW-17812754690/gJAPCLKG4NMbEIKi5K1C' });
+      // Evento no GA4 com a seção de origem do clique
+      gtag('event', 'whatsapp_click', { send_to: 'G-2VBSFZF4FX', secao: secao });
+      // Evento genérico para uso futuro no GTM (NÃO criar conversão do Ads com ele: já é disparada acima)
       window.dataLayer.push({ event: 'whatsapp_click', secao: secao });
-      if (typeof window.gtag === 'function') window.gtag('event', 'whatsapp_click', { secao: secao });
       if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: secao });
     });
   });
